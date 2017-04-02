@@ -19,8 +19,8 @@ int main(){
             throw boost::system::system_error(err);
         else cout << "Connection established" << endl; //Соединение установлено
 
-        boost::asio::streambuf sbuf; /*Обязательно должен быть указано
-        пространство имени boost::asio, ХЗ почему*/
+        boost::asio::streambuf sbuf; /*Обязательно должно быть указано
+        пространство имени boost::asio, т.к. в std тоже есть streambuf*/
         read_until(sock, sbuf, "!");
         cout << &sbuf << endl;
 
