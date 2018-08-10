@@ -1,10 +1,13 @@
-all: dirbin ./bin/server ./bin/client
+all: server.exe
 	
-dirbin:
-	mkdir bin -p
+WIN_LIBS = -lwsock32 -lws2_32
+#it with MinGW Distro nuwen
+	
+#dirbin:
+#	mkdir bin -p
 
-./bin/server: server.cpp
-	g++ server.cpp -lboost_system -o ./bin/server #-O3 -std=c++11 
+server.exe: server.cpp
+	g++  server.cpp  $(WIN_LIBS) -lboost_system -o ./server
 
-./bin/client: client.cpp
-	g++ client.cpp -lboost_system -o ./bin/client #-O3 -std=c++11 
+#./bin/client: client.cpp
+#	g++ client.cpp -lboost_system -o ./client
