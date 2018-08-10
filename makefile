@@ -1,4 +1,4 @@
-all: server.exe
+all: server.exe client.exe
 	
 WIN_LIBS = -lwsock32 -lws2_32
 #it with MinGW Distro nuwen
@@ -9,5 +9,5 @@ WIN_LIBS = -lwsock32 -lws2_32
 server.exe: server.cpp
 	g++  server.cpp  $(WIN_LIBS) -lboost_system -o ./server
 
-#./bin/client: client.cpp
-#	g++ client.cpp -lboost_system -o ./client
+client.exe: client.cpp
+	g++ client.cpp $(WIN_LIBS) -lboost_system -o ./client
