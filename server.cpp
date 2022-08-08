@@ -8,6 +8,7 @@ using namespace boost::asio;
 
 int main (){
     cout<<"Server is running\n";
+    
     try{
         io_service io;
         ip::tcp::acceptor acc(
@@ -31,8 +32,7 @@ int main (){
         // CharToOem(e.what(), buf); // windows
         // cout << buf << endl;
 
-        cout << "Exception has occurred: " << e.what() << endl;/*Произошло
-        исключение e*/
+        cout << "Exception has occurred: " << e.what() << endl; // Произошло исключение e
     }
     return 0;
 }
